@@ -1,3 +1,6 @@
+var eventBlock = ["", "", ""];
+
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -22,3 +25,24 @@ $(function () {
     // TODO: Add code to display the current date in the header of the page.
   });
   
+
+//   <!--5. When save is clicked, text is saved to localstorage  -->
+// create a queryselectorall for the save buttons
+// create event listner for save button
+// capture the text in a variable
+// save text to localstorage 
+
+
+
+var savedBtn = document.querySelectorAll(".saveBtn");
+
+for (var i = 0; i < savedBtn.length; i++) {
+    console.log(savedBtn[i])
+    savedBtn[i].addEventListener("click", function(){
+      var eventText = $(this).siblings("textarea").val()
+      console.log(eventText);
+
+    });
+
+}
+
