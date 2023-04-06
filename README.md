@@ -21,3 +21,11 @@ SO THAT I can manage my time effectively
 * THEN the text for that event is saved in local storage
 * WHEN I refresh the page
 * THEN the saved events persist
+
+<!-- Pseudo Code:-->
+<!-- 1. Current Day is displayed at the top when user opens calendar -->
+<!-- 2. There are timeblocks for standard Buisiness hours (Mon-Fri 9am-6pm) -->
+<!-- 3. Color coded Time Blocks: past:grey   present:green    future: Purple -->
+<!-- 4. Time blocks when clicked can be made an event that contains: Text area for input and a save button-->
+<!--5. When save is clicked, text is saved to localstorage  -->
+<!--6. Upon refresh the saved event stays  -->

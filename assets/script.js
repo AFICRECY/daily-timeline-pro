@@ -33,7 +33,6 @@ $(function () {
 // save text to localstorage 
 
 
-
 var savedBtn = document.querySelectorAll(".saveBtn");
 
 for (var i = 0; i < savedBtn.length; i++) {
@@ -41,8 +40,10 @@ for (var i = 0; i < savedBtn.length; i++) {
     savedBtn[i].addEventListener("click", function(){
       var eventText = $(this).siblings("textarea").val()
       console.log(eventText);
-
+      localStorage.setItem("data", eventText);
+      document.getElementById("output").innerHTML=localStorage.getItem("data")
     });
-
 }
+// one line 46 we stored the data into the data variable 
+// we are printing it on the indexhtml file 
 
