@@ -32,6 +32,22 @@ $(function () {
   });
   
 
+  function initState() {
+    var data = JSON.parse(localStorage.getItem("data"));
+    var textAreas = Array.from(document.querySelectorAll(`.description`));
+    textAreas.forEach((text) => {
+      var id = text.parentElement.id;
+      if(data && data[id]){
+        text.value = data[id] || "";
+      }
+    });
+   }
+//getting the data from localStorage whatever we have (can be null)
+//with the loop we are trying the get the data for each row using id.
+
+
+
+
 //   <!--5. When save is clicked, text is saved to localstorage  -->
 // create a queryselectorall for the save buttons
 // create event listner for save button
