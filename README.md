@@ -7,7 +7,9 @@
 | CSS     | [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)      | 
 | Git | [https://git-scm.com/](https://git-scm.com/)     |
 | JavaScript  | [https://getbootstrap.com/docs/5.3/getting-started/introduction/](https://developer.mozilla.org/en-US/docs/Web/JavaScript)      |
+| Jquery UI  | [https://jqueryui.com/](https://jqueryui.com/)      |
 | Bootstrap  | [https://getbootstrap.com/docs/5.3/getting-started/introduction/](https://getbootstrap.com/docs/5.3/getting-started/introduction/)      |
+| Day.js  | [https://day.js.org/docs/en/installation/installation](hhttps://day.js.org/docs/en/installation/installation)      |
 
 
 
@@ -29,38 +31,110 @@ This web application is a useful tool for any employee, company, or busy individ
 
 To install this project, a knowledge of HTML, CSS, JavaScript, API’s like Bootstrap, and Jquery were required. Methods used ranged from functions, document window methods, querySelector, getElementById, Event Listeners, Local Storage, Variables, If/Else Statements, and Data Types, Jquery UI widgets, and Bootstrap’s pre-designed styling components and classes. The web application is intended for the user to be able to input and store their daily tasks and click save so the data will not be lost and can be accessed later. Upon refresh, the tasks should still remain in their spot. Additionally, the planner is  time responsive and the colors of the time blocks change according to if the time slot is in the past, present, or future.  
 
+```
+var fullDate = new Date()
+var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
+var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+document.getElementById("datepicker").innerHTML=currentDate
+```
+(Above we are trying to get the month alone, so we set all the values(day, month, year) to one variable. Then we are trying to use getElementById in order to access the datepicker id we input and print the input to the HTML file with innerHTML.)
+
+
+```
+ function initState() {
+   var data = JSON.parse(localStorage.getItem("data"));
+   var textAreas = Array.from(document.querySelectorAll(`.description`));
+   textAreas.forEach((text) => {
+     var id = text.parentElement.id;
+     if(data && data[id]){
+       text.value = data[id] || "";
+     }
+   });
+  }
+```
+(Above: Getting the data from localStorage whatever we have (can be null) with the loop we are trying the get the data for each row using id.
 
 
 
+(Below: I stored everything into the full date variable. I was trying to get the month alone. I set all the values(day, month, year) to one variable. On line 46 stored the data into the data variable. I want it to print it on the .indexhtml file)
+```
+var fullDate = new Date();
+var twoDigitMonth =
+fullDate.getMonth().length + 1 === 1
+  ? fullDate.getMonth() + 1
+  : "0" + (fullDate.getMonth() + 1);
+var currentDate =
+fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+document.getElementById("datepicker").innerHTML = currentDate;
+
+
+```
+
+
+```
+function setData(label, value) {
+  var data = localStorage.getItem("data");
+  var resObj = {};
+  if (data) {
+    data = JSON.parse(data);
+    data = { ...data, ...{ [label]: value } };
+    resObj = data;
+  } else {
+    resObj[label] = value;
+  }
+  localStorage.setItem("data", JSON.stringify(resObj));
+}
+});
+```
+(Above: This function mainly helps to set data and to append the new data into the old one. This code snippet checks if the variable data exists, and if it does, it is parsing the JSON data using JSON.parse method. Then, it is creating a new object by spreading the data object and adding a new property with a key label and value.)
 
 
 
+### Usage:
+Weekly planners are used to help you plan your week. They give you a place to jot down the things that need to get done for the week, plus space for all of your appointments and events. They also have plenty of room for notes and reminders so you can keep track of important things to remember.
 
 
 
+## Credits:
+*  Traversing the DOM: https://zellwk.com/blog/dom-traversals/
+* JavaScript Assignment: https://www.w3schools.com/js/js_assignment.asp
+* Query Selector: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+* Get Element By Id: https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById 
+*JavaScript Siblings: https://www.javascripttutorial.net/javascript-dom/javascript-siblings/ 
+JavaScript Objects: https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_object 
+*Local Storage: https://www.javatpoint.com/javascript-localstorage &
+https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage 
+* JavaScript Function Parameters: https://www.w3schools.com/js/js_functi on_parameters.asp
+* Local Storage: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage 
+* ForEach (Array Prototype): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach 
+* Spread Syntax: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax 
+* 12 Hr am/pm Format: https://linuxhint.com/display-datetime-in-12-hour-am-pm-format-javascript/  
+* Date/Time: https://www.sitepoint.com/jquery-todays-date-ddmmyyyy/ 
+* JQuery UI Widgets: https://jqueryui.com/datepicker/ 
 
 
-## User Story
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
+### License:
+MIT License
 
+Copyright (c) [2023] [Afi Nkhume-Crecy]
 
-## Acceptance Criteria
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-* GIVEN I am using a daily planner to create a schedule
-* WHEN I open the planner
-* THEN the current day is displayed at the top of the calendar
-* WHEN I scroll down
-* THEN I am presented with time blocks for standard business hours
-* WHEN I view the time blocks for that day
-* THEN each time block is color-coded to indicate whether it is in the past,    present, or future
-* WHEN I click into a time block
-* THEN I can enter an event
-* WHEN I click the save button for that time block
-* THEN the text for that event is saved in local storage
-* WHEN I refresh the page
-* THEN the saved events persist
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. 
 
 <!-- Pseudo Code:-->
 <!-- 1. Current Day is displayed at the top when user opens calendar -->
