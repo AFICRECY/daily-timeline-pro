@@ -1,5 +1,35 @@
 # daily-timeline-pro
 
+## Technology Used:
+| Technology Used         | Resource URL           |
+| ------------- |:-------------:|
+| HTML    | [https://developer.mozilla.org/en-US/docs/Web/HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) |
+| CSS     | [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)      | 
+| Git | [https://git-scm.com/](https://git-scm.com/)     |
+| JavaScript  | [https://getbootstrap.com/docs/5.3/getting-started/introduction/](https://developer.mozilla.org/en-US/docs/Web/JavaScript)      |
+| Bootstrap  | [https://getbootstrap.com/docs/5.3/getting-started/introduction/](https://getbootstrap.com/docs/5.3/getting-started/introduction/)      |
+
+
+
+## Description:
+
+[Visit Deployed Site]:
+
+This web application is a useful tool for any employee, company, or busy individual who would like a concise way of organizing their daily tasks. Having a daily planner is crucial to maintaining an effective schedule. With this dynamic web application I’ve brought together HTML, CSS, JavaScript, Bootstrap, Jquery, and Day.js to help enhance the users productivity. With Daily Timeline Pro, a user can save events for each hour of the day as well as insert them into easily distinguishable time blocks. Time management can be made easy, the user simply clicks into the time block they would like to add an event/task to, and click save. Not only can they save their events and better prioritize for increased productivity, but the current time and date will always remain at the top of the calendar, and as long as they click the save icon, when the page is refreshed, their events will remain on the calendar. Daily Timeline Pro is also color coded: the present day will be green, the future days will be blue, and the past events turn gray. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## User Story
 AS AN employee with a busy schedule
 I WANT to add important events to a daily planner
