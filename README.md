@@ -18,6 +18,16 @@
 This web application is a useful tool for any employee, company, or busy individual who would like a concise way of organizing their daily tasks. Having a daily planner is crucial to maintaining an effective schedule. With this dynamic web application I’ve brought together HTML, CSS, JavaScript, Bootstrap, Jquery, and Day.js to help enhance the users productivity. With Daily Timeline Pro, a user can save events for each hour of the day as well as insert them into easily distinguishable time blocks. Time management can be made easy, the user simply clicks into the time block they would like to add an event/task to, and click save. Not only can they save their events and better prioritize for increased productivity, but the current time and date will always remain at the top of the calendar, and as long as they click the save icon, when the page is refreshed, their events will remain on the calendar. Daily Timeline Pro is also color coded: the present day will be green, the future days will be blue, and the past events turn gray. 
 
 
+## Table of Contents:
+* Installation (HTML, CSS, JavaScript, Bootstrap, Jquery, getElementById, Event Listeners, and Objects, API’s )
+* Usage
+* Credits
+* License
+
+
+### Installation:
+
+To install this project, a knowledge of HTML, CSS, JavaScript, API’s like Bootstrap, and Jquery were required. Methods used ranged from functions, document window methods, querySelector, getElementById, Event Listeners, Local Storage, Variables, If/Else Statements, and Data Types, Jquery UI widgets, and Bootstrap’s pre-designed styling components and classes. The web application is intended for the user to be able to input and store their daily tasks and click save so the data will not be lost and can be accessed later. Upon refresh, the tasks should still remain in their spot. Additionally, the planner is  time responsive and the colors of the time blocks change according to if the time slot is in the past, present, or future.  
 
 
 

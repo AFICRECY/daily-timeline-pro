@@ -73,6 +73,17 @@ Array.from(rows).forEach(row => {
   console.log(currentHour+" "+rowHour)
 
 
+  if (rowHour) {
+    // Compares row id to current hour and sets color accordingly
+    if (currentHour == rowHour) {
+      setColor(row, "lightgreen");
+    } else if (( rowHour<currentHour)) {
+      setColor(row, "skyblue");
+    } else {
+      setColor(row, "lightgrey");
+    }
+  }
+});
   
   
   
