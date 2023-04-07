@@ -60,29 +60,19 @@ function setColor(element, color) {
   element.style.backgroundColor = color;
 }
 
+
+  
 Array.from(rows).forEach(row => {
   var rowIdString = row.id;
   if (rowIdString) {
     rowHour = parseInt(rowIdString);
-    if(rowHour<=6 ){
-      rowHour+=12
-    }
-    if(currentHour<=6){
-      currentHour+=12
-    }
-    // console.log("currentHour = "+currentHour+" Row Hour = "+rowHour)
-    if(rowHour<currentHour){
-      setColor(row, "grey");
-    }
-    if(rowHour==currentHour){
-      setColor(row,"green")
-    }
-    else if(rowHour>currentHour){
-      setColor(row,"skyblue")
+    if(rowHour<12 && rowHour>=9){
+      rowHour=rowHour+12
     }
   }
-  
-  
+  console.log(currentHour+" "+rowHour)
+
+
   
   
   
