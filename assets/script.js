@@ -1,4 +1,4 @@
-var eventBlock = ["", "", ""];
+var eventBlock = [];
 
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
@@ -31,19 +31,69 @@ $(function () {
 // create event listner for save button
 // capture the text in a variable
 // save text to localstorage 
+// innerHTML means it will save to the screen 
+// local 
 
 
-var savedBtn = document.querySelectorAll(".saveBtn");
-
-for (var i = 0; i < savedBtn.length; i++) {
-    console.log(savedBtn[i])
-    savedBtn[i].addEventListener("click", function(){
-      var eventText = $(this).siblings("textarea").val()
-      console.log(eventText);
-      localStorage.setItem("data", eventText);
-      document.getElementById("output").innerHTML=localStorage.getItem("data")
-    });
-}
+// stored everything into the full date variable 
+// We are trying to get the month alone
+// we are setting all the values(day, month, year) to one variable 
+var fullDate = new Date()
+var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
+var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+document.getElementById("datepicker").innerHTML=currentDate
 // one line 46 we stored the data into the data variable 
 // we are printing it on the indexhtml file 
+
+// storing the current hour 
+// set variable and connected the variable to the class"row" 
+// We are settingg the current time equal to .Localestring 
+// 
+var rows = document.getElementsByClassName("row");
+// var currentTime = fullDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+// console.log(currentTime)
+var currentHour=parseInt(fullDate.getHours());
+// console.log(currentHour)
+
+//--------------------------------------
+function setColor(element, color) {
+  element.style.backgroundColor = color;
+}
+
+Array.from(rows).forEach(row => {
+  var rowIdString = row.id;
+  if (rowIdString) {
+    rowHour = parseInt(rowIdString);
+    if(rowHour<=6 ){
+      rowHour+=12
+    }
+    if(currentHour<=6){
+      currentHour+=12
+    }
+    // console.log("currentHour = "+currentHour+" Row Hour = "+rowHour)
+    if(rowHour<currentHour){
+      setColor(row, "grey");
+    }
+    if(rowHour==currentHour){
+      setColor(row,"green")
+    }
+    else if(rowHour>currentHour){
+      setColor(row,"skyblue")
+    }
+  }
+  
+  
+  
+  
+  
+  // var data = localStorage.getItem(row.id)
+  // if(localStorage.hasOwnProperty(row.id)){
+  //   console.log("data" + data)
+  // }
+  
+
+
+});
+
+//--------------------------------------
 

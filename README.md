@@ -29,3 +29,9 @@ SO THAT I can manage my time effectively
 <!-- 4. Time blocks when clicked can be made an event that contains: Text area for input and a save button-->
 <!--5. When save is clicked, text is saved to localstorage  -->
 <!--6. Upon refresh the saved event stays  -->
+
+https://linuxhint.com/display-datetime-in-12-hour-am-pm-format-javascript/ 
+https://www.sitepoint.com/jquery-todays-date-ddmmyyyy/
+https://api.jquery.com/Types/#Date
+https://jqueryui.com/datepicker/
+https://www.freecodecamp.org/news/javascript-get-current-date-todays-date-in-js/#:~:text=In%20JavaScript%2C%20we%20can%20easily,%2C%20time%2C%20and%20time%20zone. 
